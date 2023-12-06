@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="script.js"></script>
+</head>
+<body class="font-['Gotham Rounded'] font-bold bg-indigo-500 border h-screen relative">
+    <div id="top-bar" class="w-screen h-1/6 bg-indigo-900 border"></div>
+    <div id="q-a-container" class="border w-screen border-red-500 h-screen absolute top-0 flex flex-col">
+        <div id="question" class="border text-center mt-36">Question</div>
+        <div id="answer-buttons" class="mt-10 flex justify-center flex-wrap gap-10">
+            <button class="border w-4/5 max-w-lg">Answer 1</button>
+            <button class="border w-4/5 max-w-lg">Answer 2</button>
+            <button class="border w-4/5 max-w-lg">Answer 3</button>
+            <button class="border w-4/5 max-w-lg">Answer 4</button>
+        </div>
+    <div id="bottom-bar" class="w-screen h-1/5 bg-indigo-900 absolute bottom-0 flex items-center justify-center">
+        <div id="timer" class="border flex justify-center">
+            <button class="border">Timer</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -5,30 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz App</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="script.js"></script>
 </head>
-<body class="font-['Gotham Rounded'] font-bold bg-indigo-500 border h-screen relative">
-    <div id="top-bar" class="hidden w-screen h-[15%] bg-indigo-900 border"></div>
-    <div class="text-white text-center mt-24">
-        <p class="text-3xl md:ext-5xl">Welcome to the</p>
-        <h1 class="text-7xl md:text-8xl mt-3">Movie Quotes Quiz!</h1>
+<body class="font-['Gotham Rounded'] font-bold bg-indigo-500 border h-screen">
+
+    <!--Intro Page-->
+    <div id="intro" class="text-white text-center h-screen">
+        <p class="text-3xl lg:text-5xl relative top-48">Welcome to the</p>
+        <h1 class="text-7xl lg:text-8xl mt-3 relative top-48">Movie Quotes Quiz!</h1>
+        <button type="button" id="start-btn" class="relative top-64 w-4/5 h-1/6 max-w-lg bg-blue-200 rounded-lg shadow-xl border border-blue-400 border-2 text-3xl text-black hover:text-white hover:bg-yellow-600 hover:border hover:border-yellow-800 hover:border-4" onclick="startQuiz()">Start</button>
     </div>
-    <div id="q-a-container" class="w-screen top-0 flex flex-col h-[65%]">
-        <div id="question" class="hidden border text-center bg-blue-400 px-20 text-3xl h-[20%] py-2">Question</div>
-        <div id="answer-buttons" class="hidden flex justify-center flex-wrap gap-6 h-full w-full py-12">
-            <button class="w-4/5 max-w-lg bg-blue-200 rounded-lg h-1/5 lg:h-1/3 shadow-xl border border-blue-400 border-2 hover:bg-yellow-600 hover:border hover:border-yellow-800 hover:border-4">Answer 1</button>
-            <button class="border w-4/5 max-w-lg bg-blue-200 rounded-lg h-1/5 lg:h-1/3  shadow-xl border border-blue-400 border-2 hover:bg-yellow-600 hover:border hover:border-yellow-800 hover:border-4">Answer 2</button>
-            <button class="border w-4/5 max-w-lg bg-blue-200 rounded-lg h-1/5 lg:h-1/3  shadow-xl border border-blue-400 border-2 hover:bg-yellow-600 hover:border hover:border-yellow-800 hover:border-4">Answer 3</button>
-            <button class="border w-4/5 max-w-lg bg-blue-200 rounded-lg h-1/5 lg:h-1/3  shadow-xl border border-blue-400 border-2 hover:bg-yellow-600 hover:border hover:border-yellow-800 hover:border-4">Answer 4</button>
+
+    <!--Question 1-->
+    <div id="question1" class="hidden h-screen">
+        <!--Top Bar-->
+        <div id="top-bar" class="w-screen h-[15%] bg-indigo-900 block"></div>
+        <!--Question/Answer Block-->
+        <div id="question" class="w-screen flex flex-col h-[65%] block">
+            <!--Question-->
+            <div id="question" class="text-center bg-blue-400 px-20 text-2xl h-[20%] block py-5">“I feel the need. The need for speed”</div>
+            <!--Answers-->
+            <div id="answer-buttons" class="flex justify-center flex-wrap gap-6 h-[65%] w-full py-12 inline-block">
+                <button class="btn w-4/5 max-w-lg bg-blue-200 rounded-lg h-1/4 lg:h-2/5 shadow-xl border border-blue-400 border-2 hover:bg-yellow-600 hover:border hover:border-yellow-800 hover:border-4">The Fast and the Furious</button>
+                <button class="btn border w-4/5 max-w-lg bg-blue-200 rounded-lg h-1/4 lg:h-2/5 shadow-xl border border-blue-400 border-2 hover:bg-yellow-600 hover:border hover:border-yellow-800 hover:border-4">Mission Impossible</button>
+                <button class="btn border w-4/5 max-w-lg bg-blue-200 rounded-lg h-1/4 lg:h-2/5 shadow-xl border border-blue-400 border-2 hover:bg-yellow-600 hover:border hover:border-yellow-800 hover:border-4">Top Gun</button>
+                <button class="border lg:h-2/5 w-4/5 max-w-lg bg-blue-200 rounded-lg h-1/4 shadow-xl border border-blue-400 border-2 hover:bg-yellow-600 hover:border hover:border-yellow-800 hover:border-4">Need for Speed</button>
+            </div>
         </div>
-    <div class="border flex justify-center items-center gap-6 h-screen absolute top-0 w-full">
-        <button id="start-btn" class="border mt-72 w-4/5 h-1/5 max-w-lg bg-blue-200 rounded-lg shadow-xl border border-blue-400 border-2 text-3xl hover:bg-yellow-600 hover:border hover:border-yellow-800 hover:border-4">Start</button>
-        <button id="next-btn" class="hidden border mt-24 w-4/5 h-1/5 max-w-lg bg-blue-200 rounded-lg shadow-xl border border-blue-400 border-2 text-3xl hover:bg-yellow-600 hover:border hover:border-yellow-800 hover:border-4">Next</button>
-    </div>
-    <div id="bottom-bar" class="hidden w-screen h-[20%] bg-indigo-900 flex items-center justify-center border absolute bottom-0">
-        <div id="timer" class="border flex justify-center text-white rounded-[50%] bg-indigo-500">
-            <button class="border rounded-[50%] h-20 w-20 text-4xl">10</button>
+        <!--Bottom Bar-->
+        <div id="bottom-bar" class="w-screen h-[20%] bg-indigo-900 absolute bottom-0">
+            <!--Timer-->
+            <div class="border rounded-[50%] h-20 w-20 text-4xl bg-indigo-500 text-white m-auto mt-5 flex justify-center items-center">
+                <span>10</span>
+            </div>
         </div>
     </div>
+    <!--Next Button-->
+    <button id="next-btn" class="hidden absolute top-[85%] left-[75%] border w-1/5 h-[8%] max-w-sm bg-blue-200 rounded-lg shadow-xl border border-blue-400 border-2 text-3xl hover:bg-yellow-600 hover:border hover:border-yellow-800 hover:border-4">Next</button>
+
+    <!--Results-->
+
+    <script src="script.js"></script>
 </body>
 </html>

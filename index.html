@@ -9,22 +9,35 @@
 <body class="font-['Gotham Rounded'] font-bold bg-indigo-500 border h-screen">
 
     <!--Intro Page-->
-    <div id="intro" class="text-white text-center h-screen">
+    <div id="intro" class="hidden text-white text-center h-screen">
         <p class="text-3xl lg:text-5xl relative top-48">Welcome to the</p>
         <h1 class="text-7xl lg:text-8xl mt-3 relative top-48">Movie Quotes Quiz!</h1>
         <button type="button" id="start-btn" class="relative top-64 w-4/5 h-1/6 max-w-lg bg-blue-200 rounded-lg shadow-xl border border-blue-400 border-2 text-3xl text-black hover:text-white hover:bg-yellow-600 hover:border hover:border-yellow-800 hover:border-4" onclick="startQuiz()">Start</button>
     </div>
 
     <!--Question 1-->
-    <div id="question1" class="hidden h-screen">
+    <div id="question1" class="h-screen">
         <!--Top Bar-->
-        <div id="top-bar" class="w-screen h-[15%] bg-indigo-900 block"></div>
+        <div id="top-bar" class="h-[15%] bg-indigo-900 block">
+            <ul class="h-full flex justify-evenly items-center text-white text-center">
+                <li class="flex items-center justify-center border border-4 border-yellow-300 h-14 w-14 rounded-[50%] text-3xl text-yellow-500"><span>1</span></li>
+                <li class="flex items-center justify-center border border-4 border-blue-200 h-9 w-9 rounded-[50%] text-center"><span>2</span></li>
+                <li class="flex items-center justify-center border border-4 border-blue-200 h-9 w-9 rounded-[50%] text-center"><span>3</span></li>
+                <li class="flex items-center justify-center border border-4 border-blue-200 h-9 w-9 rounded-[50%] text-center"><span>4</span></li>
+                <li class="flex items-center justify-center border border-4 border-blue-200 h-9 w-9 rounded-[50%] text-center"><span>5</span></li>
+                <li class="flex items-center justify-center border border-4 border-blue-200 h-9 w-9 rounded-[50%] text-center"><span>6</span></li>
+                <li class="flex items-center justify-center border border-4 border-blue-200 h-9 w-9 rounded-[50%] text-center"><span>7</span></li>
+                <li class="flex items-center justify-center border border-4 border-blue-200 h-9 w-9 rounded-[50%] text-center"><span>8</span></li>
+                <li class="flex items-center justify-center border border-4 border-blue-200 h-9 w-9 rounded-[50%] text-center"><span>9</span></li>
+                <li class="flex items-center justify-center border border-4 border-blue-200 h-9 w-9 rounded-[50%] text-center"><span>10</span></li>
+            </ul>
+        </div>
         <!--Question/Answer Block-->
         <div id="question" class="w-screen flex flex-col h-[65%] block">
             <!--Question-->
-            <div id="question" class="text-center bg-blue-400 px-20 text-2xl h-[20%] block py-5">“I feel the need. The need for speed”</div>
+            <div id="question" class="text-center bg-blue-400 px-20 text-2xl h-fit block py-5">“I feel the need. The need for speed”</div>
             <!--Answers-->
-            <div id="answer-buttons" class="flex justify-center flex-wrap gap-6 h-[65%] w-full py-12 inline-block">
+            <div id="answer-buttons" class="flex justify-center flex-wrap gap-6 h-[65%] w-full py-14 inline-block">
                 <button class="btn w-4/5 max-w-lg bg-blue-200 rounded-lg h-1/4 lg:h-2/5 shadow-xl border border-blue-400 border-2 hover:bg-yellow-600 hover:border hover:border-yellow-800 hover:border-4">The Fast and the Furious</button>
                 <button class="btn border w-4/5 max-w-lg bg-blue-200 rounded-lg h-1/4 lg:h-2/5 shadow-xl border border-blue-400 border-2 hover:bg-yellow-600 hover:border hover:border-yellow-800 hover:border-4">Mission Impossible</button>
                 <button class="btn border w-4/5 max-w-lg bg-blue-200 rounded-lg h-1/4 lg:h-2/5 shadow-xl border border-blue-400 border-2 hover:bg-yellow-600 hover:border hover:border-yellow-800 hover:border-4">Top Gun</button>

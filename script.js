@@ -2,6 +2,12 @@ const introPage = document.getElementById('intro');
 const question1 = document.getElementById('question1');
 const nextButton = document.getElementById('next-btn');
 const timerElement = document.getElementById('timer');
+const resultsElement = document.getElementById('results');
+const messageElement = document.getElementById('message');
+const videoElement = document.getElementById('video');
+const lastQuestion = document.getElementById('question10');
+const resultsPage = document.getElementById('final-page');
+const buttons = document.getElementsByClassName('btn');
 
 function startQuiz() {
     introPage.classList.add('hidden');
@@ -25,6 +31,38 @@ function loadNextQuestion() {
     nextQuestion.classList.remove('hidden');
     i++;
 }
+
+let score = 0;
+function correctAnswer() {
+    score++;
+    resultsElement.innerText = score;
+    console.log(score);
+    if (score < 5) {
+        videoElement.src = "https://y.yarn.co/473f5d17-8d29-49ca-9bc5-6e6695e6efc9.mp4";
+    }
+    else if (score < 8) {
+        videoElement.src = "https://y.yarn.co/84f6a265-6947-4ee5-80fa-e1b27a173807.mp4";
+    }
+    else if (score < 10) {
+        videoElement.src = "https://y.yarn.co/1977c7e4-adb1-4b31-81e0-42ea6ad30966.mp4";
+    } else {
+        videoElement.src = "https://y.yarn.co/40d4682f-0b5d-4855-83a4-bc2a466c3406.mp4";
+    }
+}
+
+function loadResultsPage() {
+    lastQuestion.classList.add('hidden');
+    resultsPage.classList.remove('hidden');
+    videoElement.play();
+}
+
+function playAgain() {
+    score = 0;
+    i = 1;
+    videoElement.pause();
+    startQuiz();
+}
+
 
 // let count = 10;
 

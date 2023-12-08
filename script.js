@@ -7,16 +7,22 @@ const messageElement = document.getElementById('message');
 const videoElement = document.getElementById('video');
 const lastQuestion = document.getElementById('question10');
 const resultsPage = document.getElementById('final-page');
-const buttons = document.getElementsByClassName('btn');
 
 function startQuiz() {
     introPage.classList.add('hidden');
     question1.classList.remove('hidden');
+    document.getElementById('answer-buttons1').classList.remove('hidden');
     // startTimer();
 }
 
+let x = 1;
+
 function selectAnswer() {
     nextButton.classList.remove('hidden');
+    let currentAnswerID = "answer-buttons" + String(x);
+    let currentAnswer = document.getElementById(currentAnswerID);
+    currentAnswer.classList.add('hidden');
+    x++;
 }
 
 let i = 1;
@@ -27,6 +33,7 @@ function loadNextQuestion() {
     let currentQuestion = document.getElementById(currentQuestionID);
     let nextQuestion = document.getElementById(nextQuestionID);
     nextButton.classList.add('hidden');
+    document.getElementById('answer-buttons' + x).classList.remove('hidden');
     currentQuestion.classList.add('hidden');
     nextQuestion.classList.remove('hidden');
     i++;
@@ -59,6 +66,7 @@ function loadResultsPage() {
 function playAgain() {
     score = 0;
     i = 1;
+    x = 1;
     videoElement.pause();
     startQuiz();
 }
